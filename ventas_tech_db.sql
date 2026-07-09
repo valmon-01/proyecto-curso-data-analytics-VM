@@ -1,20 +1,13 @@
--- ============================================
--- Ventas_Tech_DB
--- ============================================
+
+ventas_Tech_DB
 
 CREATE DATABASE Ventas_Tech_DB;
 
--- ============================================
--- DROP TABLES (orden inverso de dependencias)
--- ============================================
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS productos;
 DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS categorias;
 
--- ============================================
--- CREATE TABLES
--- ============================================
 
 CREATE TABLE categorias (
     id_categoria     INT PRIMARY KEY,
@@ -51,9 +44,6 @@ CREATE TABLE ventas (
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
--- ============================================
--- INSERT DATA
--- ============================================
 
 INSERT INTO categorias VALUES (1, 'Computacion', 'Laptops, PCs y monitores');
 INSERT INTO categorias VALUES (2, 'Accesorios', 'Perifericos y complementos');
@@ -84,16 +74,8 @@ INSERT INTO ventas VALUES (8,  3, 2, 8,   28.00, '2024-03-13');
 INSERT INTO ventas VALUES (9,  4, 4, 1,  120.00, '2024-03-14');
 INSERT INTO ventas VALUES (10, 5, 3, 2,  450.00, '2024-03-15');
 
--- ============================================
--- VALIDACION
--- ============================================
 
 SELECT * FROM categorias;
 SELECT * FROM clientes;
 SELECT * FROM productos;
 SELECT * FROM ventas;
-USE Ventas_Tech_DB;
-SELECT COUNT(*) AS categorias FROM categorias;
-SELECT COUNT(*) AS clientes FROM clientes;
-SELECT COUNT(*) AS productos FROM productos;
-SELECT COUNT(*) AS ventas FROM ventas;
