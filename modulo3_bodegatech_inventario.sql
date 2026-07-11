@@ -1,27 +1,19 @@
--- ══════════════════════════════════════════
--- BodegaTech — Script de Inventario
--- Autor: Valentina Monti
--- Fecha: 2026-07-04
--- ══════════════════════════════════════════
 
--- ── SECCIÓN DDL ──────────────────────────
 
 DROP TABLE IF EXISTS inventario;
 
 CREATE TABLE inventario (
-    id_producto INT PRIMARY KEY,         -- Entero como PK, identificador único
+    id_producto INT PRIMARY KEY,         
     nombre_producto VARCHAR(100),
     categoria VARCHAR(50),
-    precio_unitario DECIMAL(10,2),       -- DECIMAL en vez de FLOAT: evita errores de redondeo en dinero
+    precio_unitario DECIMAL(10,2),       
     stock_actual INT,
     stock_minimo INT,
     fecha_ingreso DATE,
-    activo BIT                           -- BIT: 1 disponible, 0 descontinuado (equivalente a TINYINT(1) en SQL Server)
+    activo BIT                           
 );
 
--- ── SECCIÓN DML ──────────────────────────
 
--- INSERT INTO
 INSERT INTO inventario (id_producto, nombre_producto, categoria, precio_unitario, stock_actual, stock_minimo, fecha_ingreso, activo)
 VALUES
 (1, 'Laptop Pro 15', 'Computación', 1200.00, 15, 3, '2024-01-10', 1),
@@ -35,14 +27,10 @@ VALUES
 (9, 'SSD Externo 1TB', 'Almacenamiento', 130.00, 18, 3, '2024-03-01', 1),
 (10, 'Parlante Bluetooth', 'Audio', 60.00, 45, 8, '2024-03-01', 1);
 
--- UPDATE ventas del día
 UPDATE inventario SET stock_actual = stock_actual - 3 WHERE id_producto = 1;
 UPDATE inventario SET stock_actual = stock_actual - 12 WHERE id_producto = 2;
 UPDATE inventario SET stock_actual = stock_actual - 5 WHERE id_producto = 6;
 
--- UPDATE producto descontinuado
 UPDATE inventario SET activo = 0 WHERE id_producto = 8;
 
--- SELECT validaciones
--- Ver la tabla completa para confirmar que los datos se cargaron
 SELECT * FROM inventario;
