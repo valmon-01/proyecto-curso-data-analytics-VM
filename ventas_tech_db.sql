@@ -1,6 +1,3 @@
-
-ventas_Tech_DB
-
 CREATE DATABASE Ventas_Tech_DB;
 
 DROP TABLE IF EXISTS ventas;
