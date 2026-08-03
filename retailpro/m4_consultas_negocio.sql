@@ -61,5 +61,5 @@ ORDER BY v.mes;
 
 -- Hallazgos
 -- 1. Marzo fue el unico mes con facturacion por encima del promedio mensual ($6444 vs. promedio de $2589,75)
--- 2. El producto 1 es el que mas factura ($6000), aunque no es el mas vendido en unidades: el producto 2 lidera con 23 unidades vendidas
+-- 2. El producto 1 es el que mas factura ($6000), aunque no es el mas vendido en unidades ya que el producto 2 lidera con 23 unidades vendidas
 -- 3. El cliente 1 fue el de mayor gasto acumulado ($3202) y los 5 clientes registrados resultaron recurrentes (mas de un pedido cada uno)
