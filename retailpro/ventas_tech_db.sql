@@ -1,4 +1,6 @@
+-- ══════════════════════════════════════════
 -- Ventas_Tech_DB (RetailPro) — Esquema completo
+-- ══════════════════════════════════════════
 
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS productos;
@@ -6,7 +8,7 @@ DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS territorios;
 
--- TERRITORIOS
+-- ── TERRITORIOS ──────────────────────────
 CREATE TABLE territorios (
     id_territorio INT PRIMARY KEY,
     region VARCHAR(50) NOT NULL,
@@ -24,7 +26,7 @@ INSERT INTO territorios VALUES
 (7,'Patagonia','Argentina','Neuquén'),
 (8,'Litoral','Argentina','Santa Fe');
 
--- CATEGORIAS
+-- ── CATEGORIAS ───────────────────────────
 CREATE TABLE categorias (
     id_categoria INT PRIMARY KEY,
     nombre_categoria VARCHAR(50) NOT NULL,
@@ -71,7 +73,7 @@ INSERT INTO clientes VALUES
 (19,'Milagros Domínguez','milagros@mail.com','Rosario','Consumer',6,'2024-05-10'),
 (20,'Bruno Navarro','bruno@mail.com','Mendoza','Home Office',5,'2024-05-15');
 
--- PRODUCTOS
+-- ── PRODUCTOS ────────────────────────────
 CREATE TABLE productos (
     id_producto INT PRIMARY KEY,
     nombre_producto VARCHAR(100) NOT NULL,
@@ -96,7 +98,7 @@ INSERT INTO productos VALUES
 (9,'Parlante Bluetooth',3,'Audio',60.00,35.00,45,1),
 (10,'Hub USB-C 7 puertos',2,'Periféricos',45.00,25.00,60,1);
 
--- VENTAS
+-- ── VENTAS (tabla de hechos) ─────────────
 CREATE TABLE ventas (
     id_venta INT PRIMARY KEY,
     id_cliente INT,
